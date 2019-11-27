@@ -1,0 +1,9 @@
+        body
+        {
+            background-image:url('sky.png');
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-attachment:fixed;
+        }
+h2 {font-family:algerian;color:white ; text-align:center}
+table {background:white}.td {font-weight:bold}

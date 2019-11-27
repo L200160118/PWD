@@ -1,0 +1,42 @@
+<html>
+    <head><title>Kalkulator</title>
+    <script lang="javascript">
+    function tambah() {
+        nilaia = document.myform.a.value;
+        nilaib = document.myform.b.value;
+        tambah=parseInt(nilaia)+parseInt(nilaib);
+        document.myform.hasil.value=tambah;
+    }
+    function kurang() {
+        nilaia = document.myform.a.value;
+        nilaib = document.myform.b.value;
+        kurang=nilaia-nilaib;
+        document.myform.hasil.value=kurang;
+    }
+    function kali() {
+        nilaia = document.myform.a.value;
+        nilaib = document.myform.b.value;
+        kali= nilaia*nilaib;
+        document.myform.hasil.value=kali;
+    }
+    function bagi() {
+        nilaia = document.myform.a.value;
+        nilaib = document.myform.b.value;
+        bagi= nilaia/nilaib;
+        document.myform.hasil.value=bagi;
+    }
+    </script>
+    </head>
+    <body>
+        <form action="" name="myform">
+            <h3>Kalkulator Sederhana</h3><br>
+            nilai A = <input type="text" name="a" id="" size="5"><br>
+            nilai B = <input type="text" name="b" id="" size="5"><br><br>
+            <input type="button" name="aksi" id="" value="+" onclick="tambah()">
+            <input type="button" name="aksi" id="" value="-" onclick="kurang()">
+            <input type="button" name="aksi" id="" value="*" onclick="kali()">
+            <input type="button" name="aksi" id="" value="/" onclick="bagi()"><br><br>
+            <b>Hasil = </b> <input type="text" name="hasil" id="" size="5"><br>
+        </form>
+    </body>
+</html>

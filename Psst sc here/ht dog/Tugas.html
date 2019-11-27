@@ -1,0 +1,32 @@
+<html>
+    <head><title>Tugas</title>
+    <script type='text/javascript'>
+    function konvNilai(){
+    Nilai=document.form.a.value;
+        if(Nilai<=100 && Nilai>=81){
+            document.form.hasil.value="A";
+        }else if(Nilai<=80 && Nilai>=61){
+            document.form.hasil.value="B";
+        }else if(Nilai<=60 && Nilai>=41){
+            document.form.hasil.value="C";
+        }else if(Nilai<=40 && Nilai>=21){
+            document.form.hasil.value="D";
+        }else if(Nilai<=21 && Nilai>=0){
+            document.form.hasil.value="E";
+        }else if(Nilai>100){
+            alert('maaf ndan, nilai diluar kendali!!')
+        }else if (Nilai<0){
+            alert('maaf ndan, nilai diluar kendali!!')
+        }
+    }
+    </script>
+    </head>
+    <body>
+        <form name='form'>
+            <h3>Konversi Nilai</h3>
+            Nilai = <input type='text' name='a' size='5'></br>
+                    <input type='button' name='aksi' value='Konversi' onclick='konvNilai()'></br>
+                    <b>Hasil = </b><input type='text' name='hasil' size='5'></br>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title> TUGAS MODUL 7 </title>
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <style type='text/css'>
+            table,th,td
+                { border:1px; border-style:none; }
+			table1,th1,td1
+                { border:2px; border-style:double; cellpadding:2;}
+        </style>
+    </head>
+    <body>
+	<?php
+	$conn=mysqli_connect('localhost', 'root', '' ,'modul7');
+	?>
+		<br/>
+		<div id='div1' name='div1''>
+		</br>
+		</br>
+        <h2> <marquee> Free Registration </marquee></h2>
+		</div>
+		<br/>
+		</br>
+		</br>
+		</br>
+
+		<br/>
+		<div id='div2' name='div2'>
+        <form action='tugas.php' method='post' name='form' class='groove'>
+            <table width='55%' border='6' align='center' cellpadding='3'>
+                <tr>
+                    <td class='td' width='15%'> Nama </td>
+                    <td width='2%'> : </td>
+                    <td width='83%'><input name='nama' type='text' id='nama'></td>
+                </tr>
+                <tr>
+                    <td class='td'> Tgl Lahir </td>
+                    <td> : </td>
+                    <td><input name='hr' type='text' id='hr' size='4' maxlenght='2'>/
+                        <input name='bln' type='text' id='bln' size='4' maxlenght='2'>/
+                        <input name='thn' type='text' id='thn' size='8' maxlenght='4'>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='td'> Alamat </td>
+                    <td> &nbsp; </td>
+                    <td><textarea name='alamat' cols='40' rows='2' id='alamat'></textarea></td>
+                </tr>
+                <tr>
+                    <td class='td' width='15%'> Kota </td>
+                    <td> : </td>
+                    <td><input name='kota' type='text' id='kota'></td>
+                </tr>
+                <tr>
+                    <td> &nbsp; </td>
+                    <td> &nbsp; </td>
+                    <td> <input name='kirim' type='submit' id='kirim' value='Kirim'>
+                        <input name='cancel' type='reset' id='btnCancel' value='Cancel'>
+                    </td>
+                </tr>
+            </table>
+        </form>
+		<?php
+		ERROR_REPORTING(E_ALL ^ E_NOTICE);
+		$nama=$_POST['nama'];
+		$hr=$_POST['hr'];
+		$bln=$_POST['bln'];
+		$thn=$_POST['thn'];
+		$tgl=date("$thn-$bln-$hr");
+		$alamat=$_POST['alamat'];
+		$kota=$_POST['kota'];
+		$kirim=$_POST['kirim'];
+		$query="insert into member(id, nama, tanggal, alamat, kota, gabung) VALUES (NULL, '$nama', '$tgl', '$alamat', '$kota', CURRENT_TIMESTAMP)";
+		if($kirim){
+			mysqli_query($conn, $query);
+			echo "</br>Data Berhasil dimasukkan";
+			}
+		?>
+		</div>
+		<div nme='div3'>
+		 <h3>Members</h3>
+        <table border='1' width='50%'>
+            <tr>
+                <td align='center' width='20%'><b>Nama</b></td>
+                <td align='center' width='30%'><b>tanggal Lahir</b></td>
+                <td align='center' width='10%'><b>Alamat</td>
+                <td align='center' width='30%'><b>Kota</b></td>
+                <td colspan= 2 align='center' width='30%'><b>Keterangan</b></td>
+            </tr>
+    <?php
+        $cari = "select*from member;";
+        $hasil_cari = mysqli_query($conn,$cari);
+        while ($data = mysqli_fetch_row($hasil_cari)){
+        echo"
+            <tr>
+				<td width='30%' class='td1'>$data[1]</td>
+                <td width='20%' class='td1'>$data[2]</td>
+                <td width='30%' class='td1'>$data[3]</td>
+                <td width='10%'>$data[4]</td>
+                <td width='30%'>$data[5]</td>
+                <td><a href='update_form.php?kode_buku=$data[0]'>ubah</a></td>
+                <td><a href='delete.php?kode_buku=$data[0]'>Hapus</a></td>
+            </tr>";
+        }
+    ?>
+	</div>
+
+    </body>
+</html>
