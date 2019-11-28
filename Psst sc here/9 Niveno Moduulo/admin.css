@@ -1,0 +1,9 @@
+        body
+        {
+            background-image:url('shark.jpg');
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-attachment:fixed;
+        }
+p {font-family:algerian;color:white ; text-align:center ; font-size:45}
+table {background:white}.td {font-weight:bold}

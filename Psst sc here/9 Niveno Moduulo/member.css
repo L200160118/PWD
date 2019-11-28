@@ -1,0 +1,10 @@
+        body
+        {
+            background-image:url('28.jpg');
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-attachment:fixed;
+        }
+h4 {font-family:arial;color:white ; text-align:left ; font-size:13}
+p {font-family:algerian;color:white ; text-align:center ; font-size:45}
+table {background:white}.td {font-weight:bold}
