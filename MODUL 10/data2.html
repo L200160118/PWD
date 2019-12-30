@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Data Mahasiswa</title>
+    </head>
+    <body>
+        <script type='text/javascript'>
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET","data.xml",false);
+        xmlhttp.send();
+        xmlDoc=xmlhttp.responseXML;
+
+        document.write("<table border='1'>");
+        var x=xmlDoc.getElementsByTagName("ID");
+        document.write("<tr><td>");
+        document.write("<b>NIM</b>");
+        document.write("</td><td>");
+        document.write("<b>Nama</b>");
+        document.write("</td><td>");
+        document.write("<b>Kota</b>");
+        document.write("</td></tr>");
+
+        for (i=0;i<x.length;i++)
+        {
+            document.write("<tr><td>");
+            document.write(x[i].getElementsByTagName("NIM")[0].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(x[i].getElementsByTagName("Nama")[0].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(x[i].getElementsByTagName("Kota")[0].childNodes[0].nodeValue);
+            document.write("</td></tr>");
+        }
+        document.write("</table>");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type='text/css' href='data2.css'?>
+<Mahasiswa>
+<ID>
+<NIM>L200080001</NIM>
+<Nama>Agus Julianto</Nama>
+<Kota>Solo</Kota>
+</ID>
+<ID>
+<NIM>L200080002</NIM>
+<Nama>Joko Susilo</Nama>
+<Kota>Boyolali</Kota>
+</ID>
+<ID>
+<NIM>L200080003</NIM>
+<Nama>Fatimah</Nama>
+<Kota>Solo</Kota>
+</ID>
+<ID>
+<NIM>L200080004</NIM>
+<Nama>Eka Ramdani</Nama>
+<Kota>Klaten</Kota>
+</ID>
+<ID>
+<NIM>L200080005</NIM>
+<Nama>Paijo</Nama>
+<Kota>Wonogiri</Kota>
+</ID>
+</Mahasiswa>

@@ -1,0 +1,28 @@
+body
+{
+    background:polkadot
+}
+h1
+{
+    font-family:monospace;
+    background-color:lightblue
+}
+h2
+{
+    font-family:monospace;
+    background-color:lightgreen
+}
+table
+{
+    font-family:Cambria;
+    background:white
+}
+.td 
+{
+    font-weight:bold;
+}
+.dashed
+{
+    border-style:dashed;
+    border-color:rgb(255, 192, 221);
+}
